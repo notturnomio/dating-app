@@ -60,9 +60,14 @@ const Users = () => {
     ));
   };
 
-  console.log(users.length);
-
-  return (
+  return users.length === 0 ? (
+    <>
+      <h1 className="fw-bold text-danger text-center m-3 p-3">Fast Love App</h1>
+      <span className={getPhraseClasses(users.length)}>
+        {renderPhrase(users.length)}
+      </span>
+    </>
+  ) : (
     <>
       <h1 className="fw-bold text-danger text-center m-3 p-3">Fast Love App</h1>
       <span className={getPhraseClasses(users.length)}>
