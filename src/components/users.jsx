@@ -40,34 +40,29 @@ const Users = () => {
     setUsers((prevState) => prevState.filter((user) => user !== id));
   };
 
-  const renderTable = () => {
-    return users.map((user) => (
-      <tr key={user._id}>
-        <td>{user.name}</td>
-        <td>{renderQualities(user)}</td>
-        <td>{user.profession.name}</td>
-        <td>{user.completedMeetings}</td>
-        <td>{user.rate}</td>
-        <td>
-          <button
-            className="btn btn-danger btn-sm m-2"
-            onClick={() => handleDeleteUsers(user)}
-          >
-            Удалить
-          </button>
-        </td>
-      </tr>
-    ));
+  const renderTable = (number) => {
+    return number === 0
+      ? document.querySelector(".table").setAttribute("hidden", true)
+      : users.map((user) => (
+          <tr key={user._id}>
+            <td>{user.name}</td>
+            <td>{renderQualities(user)}</td>
+            <td>{user.profession.name}</td>
+            <td>{user.completedMeetings}</td>
+            <td>{user.rate}</td>
+            <td>
+              <button
+                className="btn btn-danger btn-sm m-2"
+                onClick={() => handleDeleteUsers(user)}
+              >
+                Удалить
+              </button>
+            </td>
+          </tr>
+        ));
   };
 
-  return users.length === 0 ? (
-    <>
-      <h1 className="fw-bold text-danger text-center m-3 p-3">Fast Love App</h1>
-      <span className={getPhraseClasses(users.length)}>
-        {renderPhrase(users.length)}
-      </span>
-    </>
-  ) : (
+  return (
     <>
       <h1 className="fw-bold text-danger text-center m-3 p-3">Fast Love App</h1>
       <span className={getPhraseClasses(users.length)}>
@@ -85,7 +80,7 @@ const Users = () => {
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody>{renderTable()}</tbody>
+        <tbody>{renderTable(users.length)}</tbody>
       </table>
     </>
   );
