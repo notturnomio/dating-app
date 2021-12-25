@@ -52,7 +52,7 @@ const users = [
     qualities: [qualities.buller, qualities.handsome, qualities.alcoholic],
     completedMeetings: 15,
     rate: 2.5,
-    bookmark: false,
+    bookmark: true,
   },
   {
     _id: "67rdca3eeb7f6fgeed471817",
@@ -70,7 +70,7 @@ const users = [
     qualities: [qualities.uncertain],
     completedMeetings: 148,
     rate: 3.5,
-    bookmark: false,
+    bookmark: true,
   },
   {
     _id: "67rdca3eeb7f6fgeed471819",
@@ -106,7 +106,7 @@ const users = [
     qualities: [qualities.handsome],
     completedMeetings: 72,
     rate: 5,
-    bookmark: false,
+    bookmark: true,
   },
   {
     _id: "67rdca3eeb7f6fgeed471823",
@@ -142,7 +142,7 @@ const users = [
     qualities: [qualities.handsome],
     completedMeetings: 434,
     rate: 5,
-    bookmark: false,
+    bookmark: true,
   },
 ];
 export function fetchAll() {
