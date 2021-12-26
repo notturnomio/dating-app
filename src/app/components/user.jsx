@@ -14,11 +14,11 @@ const User = ({
   onBookmark,
 }) => {
   return (
-    <tr key={_id}>
+    <tr>
       <td>{name}</td>
       <td>
         {qualities.map((qual) => (
-          <Qualities {...qual} />
+          <Qualities {...qual} key={qual.name} />
         ))}
       </td>
       <td className="">{profession.name}</td>
