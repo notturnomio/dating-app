@@ -1,17 +1,22 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const SearchStatus = ({ length }) => {
   const renderPhrase = (number) => {
-    return number === 0
-      ? "Для вас нет подходящей пары."
-      : (number.toString().substr(-1) > 1 &&
-          number.toString().substr(-1) < 5 &&
-          number < 11) ||
-        number > 15
-      ? `${number} человека готовы встретиться с вами.`
-      : number === 1
-      ? `${number} человек готов встретиться с вами.`
-      : `${number} человек готовы встретиться с вами.`;
+    if (number === 0) {
+      return "Для вас нет подходящей пары.";
+    } else if (
+      (number.toString().substr(-1) > 1 &&
+        number.toString().substr(-1) < 5 &&
+        number < 11) ||
+      number > 15
+    ) {
+      return number + " человека готовы встретиться с вами.";
+    } else if (number === 1) {
+      return number + " человек готов встретиться с вами.";
+    } else {
+      return number + " человек готовы встретиться с вами.";
+    }
   };
 
   const getPhraseClasses = (number) => {
@@ -25,6 +30,10 @@ const SearchStatus = ({ length }) => {
       <span className={getPhraseClasses(length)}>{renderPhrase(length)}</span>
     </div>
   );
+};
+
+SearchStatus.propTypes = {
+  length: PropTypes.number.isRequired
 };
 
 export default SearchStatus;

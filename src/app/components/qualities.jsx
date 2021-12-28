@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const Qualities = ({ color, name, _id }) => {
@@ -6,6 +7,12 @@ const Qualities = ({ color, name, _id }) => {
       {name}
     </span>
   );
+};
+
+Qualities.propTypes = {
+  color: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired
 };
 
 export default Qualities;

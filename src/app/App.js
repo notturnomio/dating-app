@@ -15,7 +15,9 @@ function App() {
     const bookmarkToggle = users.map((user) => {
       if (user._id === id) {
         user.bookmark = !user.bookmark;
+        console.log(user.name + " - bookmark is: " + user.bookmark);
       }
+
       return user;
     });
     setUsers(bookmarkToggle);
