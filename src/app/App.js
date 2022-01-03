@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "./components/header";
-import SearchStatus from "./components/searchStatus";
 import Users from "./components/users";
 import api from "./api";
 
@@ -25,8 +23,6 @@ function App() {
 
   return (
     <>
-      <Header />
-      <SearchStatus length={users.length} />
       <Users
         users={users}
         onDelete={handleDeleteUsers}
