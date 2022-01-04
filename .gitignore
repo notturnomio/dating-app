@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/app/api/old/index.js
+src/app/api/old/fake.api/professions.api.js
+src/app/api/old/fake.api/user.api.js

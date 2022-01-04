@@ -1,24 +1,26 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true
-  },
-  extends: ["plugin:react/recommended", "standard"],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
+    env: {
+        browser: true,
+        es2021: true
     },
-    ecmaVersion: 13,
-    sourceType: "module"
-  },
-  plugins: ["react"],
-  rules: {
-    indent: ["error", 2, { ignoredNodes: ["TemplateLiteral *"] }],
-    semi: [2, "always"],
-    "space-before-function-paren": [
-      "error",
-      { anonymous: "always", named: "never" }
-    ],
-    quotes: ["error", "double", { allowTemplateLiterals: true }]
-  }
+    extends: ["plugin:react/recommended", "standard"],
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        },
+        ecmaVersion: 13,
+        sourceType: "module"
+    },
+    plugins: ["react"],
+    rules: {
+        indent: ["error", 4],
+        semi: [2, "always"],
+        "space-before-function-paren": [
+            "error",
+            { anonymous: "always", named: "never" }
+        ],
+        quotes: ["error", "double", { allowTemplateLiterals: true }],
+        "newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
+        "max-statements-per-line": ["error", { max: 1 }]
+    }
 };
