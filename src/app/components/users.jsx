@@ -18,6 +18,17 @@ const Users = () => {
         api.users.fetchAll().then((data) => setUsers(data));
     }, []);
 
+    useEffect(() => {
+        if (users) {
+            if (
+                currentPage * pageSize - pageSize > users.length - 1 &&
+                users.length > 0
+            ) {
+                setCurrentPage((prev) => prev - 1);
+            }
+        }
+    }, [users]);
+
     // useEffect(() => {
     //   api.professions
     //     .fetchAll()
@@ -31,10 +42,6 @@ const Users = () => {
     const handleDeleteUsers = (id) => {
         setUsers((prevState) => prevState.filter((user) => user._id !== id));
     };
-
-    // useEffect(() => {
-    //     setCurrentPage(1);
-    // }, [users]);
 
     const handleToggleBookmark = (id) => {
         const bookmarkToggle = users.map((user) => {
